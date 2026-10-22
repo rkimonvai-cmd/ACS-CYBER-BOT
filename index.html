@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<title>ACS TONMOY | WhatsApp MD Bot</title>
+<meta name="description" content="ACS TONMOY MD BOT - WhatsApp Pairing Code Generator। নিজের WhatsApp Account নিরাপদে Link করুন।" />
+<link rel="icon" type="image/png" href="assets/logo.png" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrapper">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <img src="assets/logo.png" alt="ACS TONMOY Logo" class="logo" />
+        <div>
+          <h1 class="brand-title">ACS TONMOY</h1>
+          <p class="brand-sub">WhatsApp MD Bot · Pairing Code Generator</p>
+        </div>
+      </div>
+      <div class="pill" id="server-pill">
+        <span class="dot" id="server-dot"></span>
+        <span id="server-pill-text">পরীক্ষা করা হচ্ছে...</span>
+      </div>
+    </header>
+
+    <!-- Status Cards -->
+    <section class="status-grid">
+      <div class="card">
+        <p class="card-label">Backend Status</p>
+        <p class="card-value" id="backend-status">—</p>
+        <p class="card-sub" id="backend-sub">—</p>
+      </div>
+      <div class="card">
+        <p class="card-label">WhatsApp Connection</p>
+        <p class="card-value" id="bot-status">—</p>
+        <p class="card-sub" id="bot-sub">—</p>
+      </div>
+      <div class="card">
+        <p class="card-label">মোট সফল Pairing</p>
+        <p class="card-value" id="success-count">0</p>
+        <p class="card-sub" id="total-sub">মোট Request: 0</p>
+      </div>
+    </section>
+
+    <!-- Pairing Form -->
+    <section class="panel">
+      <h2>WhatsApp Pairing Code তৈরি করুন</h2>
+      <p class="muted">শুধুমাত্র নিজের WhatsApp Number ব্যবহার করুন। Country Code নির্বাচন করে Number লিখুন।</p>
+
+      <form id="pairing-form" class="form">
+        <div class="form-row">
+          <select id="country-code">
+            <option value="880">🇧🇩 বাংলাদেশ (+880)</option>
+            <option value="91">🇮🇳 ভারত (+91)</option>
+            <option value="1">🇺🇸 আমেরিকা (+1)</option>
+            <option value="44">🇬🇧 যুক্তরাজ্য (+44)</option>
+            <option value="971">🇦🇪 আরব আমিরাত (+971)</option>
+            <option value="966">🇸🇦 সৌদি আরব (+966)</option>
+            <option value="60">🇲🇾 মালয়েশিয়া (+60)</option>
+            <option value="65">🇸🇬 সিঙ্গাপুর (+65)</option>
+          </select>
+          <input type="tel" id="phone-number" inputmode="numeric" placeholder="যেমন: 1812345678 (Country Code ছাড়া)" required />
+        </div>
+        <button type="submit" id="generate-btn">
+          <span id="btn-spinner" class="spinner hidden"></span>
+          <span id="btn-text">Generate Pairing Code</span>
+        </button>
+      </form>
+
+      <div id="notice" class="notice hidden"></div>
+
+      <div id="code-box" class="code-box hidden">
+        <p class="card-label">আপনার Pairing Code</p>
+        <p id="pairing-code" class="pairing-code">--------</p>
+        <button id="copy-btn" class="copy-btn">📋 Code কপি করুন</button>
+        <p class="muted small">
+          WhatsApp খুলুন → Settings → Linked Devices → Link a Device → Link with phone number → এই Code প্রবেশ করান।
+        </p>
+      </div>
+    </section>
+
+    <!-- Help Section -->
+    <section class="panel">
+      <h2>ব্যবহার নির্দেশিকা / Help</h2>
+      <ol class="help-list">
+        <li>আপনার দেশ এবং সঠিক WhatsApp Number নির্বাচন করুন।</li>
+        <li>"Generate Pairing Code" বাটনে ক্লিক করুন।</li>
+        <li>তৈরি হওয়া Code WhatsApp Linked Devices অপশনে গিয়ে বসান।</li>
+        <li>শুধুমাত্র নিজের বা অনুমতি থাকা Account এর জন্য এই Tool ব্যবহার করুন।</li>
+        <li>Code কাজ না করলে Server Status পরীক্ষা করুন এবং পুনরায় চেষ্টা করুন।</li>
+        <li>
+          Backend URL কনফিগার করা না থাকলে
+          <code>config.js</code> ফাইলে নিজের Render Backend URL বসান।
+        </li>
+      </ol>
+    </section>
+
+    <footer class="footer">© 2026 ACS TONMOY — সর্বস্বত্ব সংরক্ষিত</footer>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
